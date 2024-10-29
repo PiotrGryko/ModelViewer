@@ -3,24 +3,258 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ModelViewer</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            padding: 50px;
-        }
-        h1 {
-            font-size: 2.5em;
-        }
-        p {
-            font-size: 1.2em;
-            color: #333;
-        }
-    </style>
+    <title>ModelViewer - App</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+
+<nav>
+    <a href="index.html" class="active">App</a>
+    <a href="pytorch.html">PyTorch</a>
+    <a href="gallery.html">Models Gallery</a>
+</nav>
+
+<div class="container">
     <h1>Welcome to ModelViewer</h1>
     <p>Your tool for AI model visualization and debugging.</p>
+
+    <!-- Trailer Section -->
+    <div class="video-placeholder">
+        Trailer Video Placeholder
+    </div>
+
+    <!-- Introduction Section -->
+    <section>
+        <h2>About ModelViewer</h2>
+        <p>
+            ModelViewer is a powerful tool designed to help you visualize and explore AI models with ease.
+            Whether you're working with Hugging Face models, PyTorch modules, or even raw Numpy data,
+            ModelViewer allows you to load, interact with, and analyze model activations and outputs directly from
+            Python.
+        </p>
+    </section>
+
+    <!-- Code Examples Section -->
+    <section>
+        <h2>Code Examples</h2>
+
+        <!-- Loading the Model Example -->
+        <div class="code-section">
+            <h3>Loading the Model</h3>
+            <pre>
+# Loading the model and running the conversation loop from Huggingface
+from transformers import AutoModelForCausalLM, AutoTokenizer
+tokenizer = AutoTokenizer.from_pretrained("gpt2")
+model = AutoModelForCausalLM.from_pretrained("gpt2")
+
+while True:
+    input_text = input("User: ")
+    inputs = tokenizer(input_text, return_tensors="pt")
+    outputs = model.generate(inputs.input_ids)
+    response = tokenizer.decode(outputs[0])
+    print(f"Model: {response}")
+            </pre>
+        </div>
+        <div class="video-placeholder">
+            Model Screenshot Placeholder
+        </div>
+
+        <!-- Loading a Single PyTorch Module Example -->
+        <div class="code-section">
+            <h3>Loading a PyTorch Module</h3>
+            <pre>
+# Loading a PyTorch Conv2d module
+import torch.nn as nn
+conv = nn.Conv2d(in_channels=1, out_channels=64, kernel_size=3)
+ModelViewer.load_module(conv)
+            </pre>
+        </div>
+        <div class="video-placeholder">
+            PyTorch Module Screenshot Placeholder
+        </div>
+
+        <!-- Loading Pure Numpy Data Example -->
+        <div class="code-section">
+            <h3>Loading Pure Numpy Data</h3>
+            <pre>
+# Loading a Numpy array into the app
+import numpy as np
+data = np.random.rand(64, 64, 3)
+ModelViewer.load_numpy(data)
+            </pre>
+        </div>
+        <div class="video-placeholder">
+            Numpy Data Screenshot Placeholder
+        </div>
+    </section>
+
+    <!-- Activation Functionality Section -->
+    <section>
+        <h2>Activation Functionality</h2>
+        <p>
+            Interact with the loaded modules directly from Python and explore how activations map across the layers.
+            You can visualize activations and see how individual values are transformed from inputs to outputs,
+            making it easier to debug and optimize your models.
+        </p>
+        <div class="code-section">
+            <h3>Activation Interaction Example</h3>
+            <pre>
+# Interacting with activations in the loaded module
+output = ModelViewer.get_activation('conv2d')
+ModelViewer.visualize_activation(output)
+            </pre>
+        </div>
+        <div class="video-placeholder">
+            Activation Mapping Screenshot Placeholder
+        </div>
+    </section>
+
+    <!-- Scene Engine and Data Streaming Section -->
+    <section>
+        <h2>Scene Engine and Efficient Data Streaming</h2>
+        <p>
+            ModelViewer's scene engine efficiently streams data directly from the model or numpy input with minimal
+            memory usage.
+            This allows you to explore large models and datasets without the overhead of excessive data copies.
+            The scene is interactive, allowing you to zoom in on individual values and analyze them in detail.
+        </p>
+        <div class="video-placeholder">
+            Scene Engine Zooming Screenshot Placeholder
+        </div>
+    </section>
+
+    <!-- Data Representation Section -->
+    <section>
+        <h2>Data Representation from 1D to 5D</h2>
+        <p>
+            ModelViewer can visualize data across different formats from 1D to 5D, helping you map multidimensional data
+            into intuitive 2D visualizations.
+        </p>
+
+        <!-- 1D Data Example -->
+        <div class="code-section">
+            <h3>1D Data Representation</h3>
+            <pre>
+# Loading 1D data in ModelViewer
+import numpy as np
+data = np.random.rand(64)
+ModelViewer.load_numpy(data)
+            </pre>
+        </div>
+        <div class="video-placeholder">
+            1D Data Screenshot Placeholder
+        </div>
+
+        <!-- 2D Data Example -->
+        <div class="code-section">
+            <h3>2D Data Representation</h3>
+            <pre>
+# Loading 2D data in ModelViewer
+import numpy as np
+data = np.random.rand(64, 64)
+ModelViewer.load_numpy(data)
+            </pre>
+        </div>
+        <div class="video-placeholder">
+            2D Data Screenshot Placeholder
+        </div>
+
+        <!-- 3D Data Example -->
+        <div class="code-section">
+            <h3>3D Data Representation</h3>
+            <pre>
+# Loading 3D data in ModelViewer
+import numpy as np
+data = np.random.rand(64, 64, 64)
+ModelViewer.load_numpy(data)
+            </pre>
+        </div>
+        <div class="video-placeholder">
+            3D Data Screenshot Placeholder
+        </div>
+
+        <!-- 4D Data Example -->
+        <div class="code-section">
+            <h3>4D Data Representation</h3>
+            <pre>
+# Loading 4D data in ModelViewer
+import numpy as np
+data = np.random.rand(64, 64, 64, 3)
+ModelViewer.load_numpy(data)
+            </pre>
+        </div>
+        <div class="video-placeholder">
+            4D Data Screenshot Placeholder
+        </div>
+
+        <!-- 5D Data Example -->
+        <div class="code-section">
+            <h3>5D Data Representation</h3>
+            <pre>
+# Loading 5D data in ModelViewer
+import numpy as np
+data = np.random.rand(64, 64, 64, 3, 10)
+ModelViewer.load_numpy(data)
+            </pre>
+        </div>
+        <div class="video-placeholder">
+            5D Data Screenshot Placeholder
+        </div>
+    </section>
+
+    <!-- Minimal Dependencies Section -->
+    <section>
+        <h2>Minimal Dependencies</h2>
+        <p>
+            Built from the ground up, ModelViewer uses minimal dependencies to provide a lightweight and fast
+            experience.
+            We’ve avoided large frameworks to ensure flexibility and performance for your AI model visualization needs.
+        </p>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="pricing-section">
+        <h2>Pricing</h2>
+        <table class="pricing-table">
+            <thead>
+            <tr>
+                <th>Tier</th>
+                <th>Price</th>
+                <th>Features</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>Free</td>
+                <td>$0</td>
+                <td>
+                    - Up to 10M params<br>
+                    - Unlimited Numpy data
+                </td>
+            </tr>
+            <tr>
+                <td>Plus</td>
+                <td>$20/month</td>
+                <td>
+                    - Unlimited PyTorch modules<br>
+                    - Unlimited Numpy data<br>
+                    - Priority Support
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <!-- Subscribe Button -->
+    <div class="subscribe-button-container">
+        <button class="subscribe-button">Subscribe</button>
+    </div>
+
+</div>
+
+<footer>
+    &copy; 2024 ModelViewer
+</footer>
+
 </body>
 </html>

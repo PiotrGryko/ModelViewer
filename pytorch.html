@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ModelViewer - PyTorch</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<nav>
+    <a href="index.html">App</a>
+    <a href="pytorch.html" class="active">PyTorch</a>
+    <a href="gallery.html">Models Gallery</a>
+</nav>
+
+<div class="pytorch-section container">
+    <div class="pytorch-nav">
+    <h3>Modules</h3>
+    <ul>
+        <!-- Convolutional Layers -->
+        <li><strong>Convolutional Layers</strong></li>
+        <li><a href="#conv1d">nn.Conv1d</a></li>
+        <li><a href="#convtranspose1d">nn.ConvTranspose1d</a></li>
+        <li><a href="#lazyconv1d">nn.LazyConv1d</a></li>
+        <li><a href="#lazyconvtranspose1d">nn.LazyConvTranspose1d</a></li>
+        <li><a href="#conv2d">nn.Conv2d</a></li>
+        <li><a href="#convtranspose2d">nn.ConvTranspose2d</a></li>
+        <li><a href="#lazyconv2d">nn.LazyConv2d</a></li>
+        <li><a href="#lazyconvtranspose2d">nn.LazyConvTranspose2d</a></li>
+        <li><a href="#conv3d">nn.Conv3d</a></li>
+        <li><a href="#convtranspose3d">nn.ConvTranspose3d</a></li>
+        <li><a href="#lazyconv3d">nn.LazyConv3d</a></li>
+        <li><a href="#lazyconvtranspose3d">nn.LazyConvTranspose3d</a></li>
+
+        <!-- Pooling Layers -->
+        <li><strong>Pooling Layers</strong></li>
+        <li><a href="#maxpool1d">nn.MaxPool1d</a></li>
+        <li><a href="#maxpool2d">nn.MaxPool2d</a></li>
+        <li><a href="#maxpool3d">nn.MaxPool3d</a></li>
+        <li><a href="#avgpool1d">nn.AvgPool1d</a></li>
+        <li><a href="#avgpool2d">nn.AvgPool2d</a></li>
+        <li><a href="#avgpool3d">nn.AvgPool3d</a></li>
+        <li><a href="#lppool1d">nn.LPPool1d</a></li>
+        <li><a href="#lppool2d">nn.LPPool2d</a></li>
+        <li><a href="#lppool3d">nn.LPPool3d</a></li>
+        <li><a href="#adaptivemaxpool1d">nn.AdaptiveMaxPool1d</a></li>
+        <li><a href="#adaptivemaxpool2d">nn.AdaptiveMaxPool2d</a></li>
+        <li><a href="#adaptivemaxpool3d">nn.AdaptiveMaxPool3d</a></li>
+        <li><a href="#adaptiveavgpool1d">nn.AdaptiveAvgPool1d</a></li>
+        <li><a href="#adaptiveavgpool2d">nn.AdaptiveAvgPool2d</a></li>
+        <li><a href="#adaptiveavgpool3d">nn.AdaptiveAvgPool3d</a></li>
+        <li><a href="#fractionalmaxpool2d">nn.FractionalMaxPool2d</a></li>
+        <li><a href="#fractionalmaxpool3d">nn.FractionalMaxPool3d</a></li>
+
+        <!-- Unpooling Layers -->
+        <li><strong>Unpooling Layers</strong></li>
+        <li><a href="#maxunpool1d">nn.MaxUnpool1d</a></li>
+        <li><a href="#maxunpool2d">nn.MaxUnpool2d</a></li>
+        <li><a href="#maxunpool3d">nn.MaxUnpool3d</a></li>
+
+        <!-- Padding Layers -->
+        <li><strong>Padding Layers</strong></li>
+        <li><a href="#reflectionpad1d">nn.ReflectionPad1d</a></li>
+        <li><a href="#reflectionpad2d">nn.ReflectionPad2d</a></li>
+        <li><a href="#reflectionpad3d">nn.ReflectionPad3d</a></li>
+        <li><a href="#replicationpad1d">nn.ReplicationPad1d</a></li>
+        <li><a href="#replicationpad2d">nn.ReplicationPad2d</a></li>
+        <li><a href="#replicationpad3d">nn.ReplicationPad3d</a></li>
+        <li><a href="#zeropad1d">nn.ZeroPad1d</a></li>
+        <li><a href="#zeropad2d">nn.ZeroPad2d</a></li>
+        <li><a href="#zeropad3d">nn.ZeroPad3d</a></li>
+        <li><a href="#constantpad1d">nn.ConstantPad1d</a></li>
+        <li><a href="#constantpad2d">nn.ConstantPad2d</a></li>
+        <li><a href="#constantpad3d">nn.ConstantPad3d</a></li>
+        <li><a href="#circularpad1d">nn.CircularPad1d</a></li>
+        <li><a href="#circularpad2d">nn.CircularPad2d</a></li>
+        <li><a href="#circularpad3d">nn.CircularPad3d</a></li>
+
+        <!-- Linear Layers -->
+        <li><strong>Linear Layers</strong></li>
+        <li><a href="#identity">nn.Identity</a></li>
+        <li><a href="#bilinear">nn.Bilinear</a></li>
+        <li><a href="#lazylinear">nn.LazyLinear</a></li>
+        <li><a href="#linear">nn.Linear</a></li>
+
+        <!-- Normalization Layers -->
+        <li><strong>Normalization Layers</strong></li>
+        <li><a href="#layernorm">nn.LayerNorm</a></li>
+        <li><a href="#batchnorm1d">nn.BatchNorm1d</a></li>
+        <li><a href="#batchnorm2d">nn.BatchNorm2d</a></li>
+        <li><a href="#batchnorm3d">nn.BatchNorm3d</a></li>
+        <li><a href="#lazybatchnorm1d">nn.LazyBatchNorm1d</a></li>
+        <li><a href="#lazybatchnorm2d">nn.LazyBatchNorm2d</a></li>
+        <li><a href="#lazybatchnorm3d">nn.LazyBatchNorm3d</a></li>
+        <li><a href="#instancenorm1d">nn.InstanceNorm1d</a></li>
+        <li><a href="#instancenorm2d">nn.InstanceNorm2d</a></li>
+        <li><a href="#instancenorm3d">nn.InstanceNorm3d</a></li>
+        <li><a href="#lazyinstancenorm1d">nn.LazyInstanceNorm1d</a></li>
+        <li><a href="#lazyinstancenorm2d">nn.LazyInstanceNorm2d</a></li>
+        <li><a href="#lazyinstancenorm3d">nn.LazyInstanceNorm3d</a></li>
+        <li><a href="#localresponsenorm">nn.LocalResponseNorm</a></li>
+        <li><a href="#groupnorm">nn.GroupNorm</a></li>
+
+        <!-- Dropout Layers -->
+        <li><strong>Dropout Layers</strong></li>
+        <li><a href="#dropout">nn.Dropout</a></li>
+        <li><a href="#dropout1d">nn.Dropout1d</a></li>
+        <li><a href="#dropout2d">nn.Dropout2d</a></li>
+        <li><a href="#dropout3d">nn.Dropout3d</a></li>
+        <li><a href="#alphadropout">nn.AlphaDropout</a></li>
+        <li><a href="#featurealphadropout">nn.FeatureAlphaDropout</a></li>
+
+        <!-- Distance Functions -->
+        <li><strong>Distance Functions</strong></li>
+        <li><a href="#cosinesimilarity">nn.CosineSimilarity</a></li>
+        <li><a href="#pairwisedistance">nn.PairwiseDistance</a></li>
+
+        <!-- Vision Layers -->
+        <li><strong>Vision Layers</strong></li>
+        <li><a href="#pixelshuffle">nn.PixelShuffle</a></li>
+        <li><a href="#pixelunshuffle">nn.PixelUnshuffle</a></li>
+        <li><a href="#upsamplingnearest2d">nn.UpsamplingNearest2d</a></li>
+        <li><a href="#upsamplingbilinear2d">nn.UpsamplingBilinear2d</a></li>
+        <li><a href="#upsample">nn.Upsample</a></li>
+        <li><a href="#channelshuffle">nn.ChannelShuffle</a></li>
+
+        <!-- Activations -->
+        <li><strong>Activations</strong></li>
+        <li><a href="#relu">nn.ReLU</a></li>
+        <li><a href="#sigmoid">nn.Sigmoid</a></li>
+        <li><a href="#tanh">nn.Tanh</a></li>
+        <li><a href="#gelu">nn.GELU</a></li>
+        <li><a href="#selu">nn.SELU</a></li>
+        <li><a href="#softmax">nn.Softmax</a></li>
+
+        <!-- Loss Functions -->
+        <li><strong>Loss Functions</strong></li>
+        <li><a href="#l1loss">nn.L1Loss</a></li>
+        <li><a href="#mseloss">nn.MSELoss</a></li>
+        <li><a href="#crossentropyloss">nn.CrossEntropyLoss</a></li>
+        <li><a href="#ctcloss">nn.CTCLoss</a></li>
+        <li><a href="#poissonnllloss">nn.PoissonNLLLoss</a></li>
+        <li><a href="#kldivloss">nn.KLDivLoss</a></li>
+
+        <!-- Recurrent Layers -->
+        <li><strong>Recurrent Layers</strong></li>
+        <li><a href="#rnn">nn.RNN</a></li>
+        <li><a href="#lstm">nn.LSTM</a></li>
+        <li><a href="#gru">nn.GRU</a></li>
+        <li><a href="#rnncell">nn.RNNCell</a></li>
+        <li><a href="#lstmcell">nn.LSTMCell</a></li>
+        <li><a href="#grucell">nn.GRUCell</a></li>
+
+        <!-- Transformer Layers -->
+        <li><strong>Transformer Layers</strong></li>
+        <li><a href="#transformer">nn.Transformer</a></li>
+        <li><a href="#transformerencoder">nn.TransformerEncoder</a></li>
+        <li><a href="#transformerdecoder">nn.TransformerDecoder</a></li>
+        <li><a href="#transformerencoderlayer">nn.TransformerEncoderLayer</a></li>
+        <li><a href="#transformerdecoderlayer">nn.TransformerDecoderLayer</a></li>
+    </ul>
+</div>
+
+    <div class="pytorch-content">
+        <h2>PyTorch Modules</h2>
+
+        <!-- Introduction Section -->
+        <section>
+            <p>
+                Each module listed below comes with a custom "Result UI" that explains and reproduces the output values displayed on screen. This interactive feature ensures that the output is not only visualized but can also be reproduced based on the values seen, providing deeper insights into the model's behavior.
+            </p>
+            <div class="video-placeholder">
+                Screenshot Placeholder for "Result UI"
+            </div>
+        </section>
+
+        <!-- Start filling in the modules content -->
+        <div id="conv1d" class="module">
+            <h3>nn.Conv1d</h3>
+            <p>1D convolutional layer for temporal data processing.</p>
+            <img src="placeholder-image.png" alt="Conv1d Screenshot">
+        </div>
+        <div id="convtranspose1d" class="module">
+            <h3>nn.ConvTranspose1d</h3>
+            <p>1D transposed convolutional layer for temporal data processing.</p>
+            <img src="placeholder-image.png" alt="ConvTranspose1d Screenshot">
+        </div>
+        <div id="lazyconv1d" class="module">
+            <h3>nn.LazyConv1d</h3>
+            <p>1D convolutional layer with lazy initialization.</p>
+            <img src="placeholder-image.png" alt="LazyConv1d Screenshot">
+        </div>
+        <!-- Continue filling all modules as provided -->
+    </div>
+</div>
+
+<footer>
+    &copy; 2024 ModelViewer
+</footer>
+
+</body>
+</html>
